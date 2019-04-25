@@ -21,6 +21,5 @@ RUN . $HOME/requirements.sh
 # Adding the build here because we will be modifying it a lot
 # And we want to use the cache layers of docker
 COPY build.sh $HOME/ 
-# RUN chown bamboo build.sh && \
-#     chmod 744 build.sh
-#ENTRYPOINT [ "/bin/bash", "$HOME/build.sh"]
+
+ENTRYPOINT [ "/bin/bash", "/home/bamboo/build.sh"]
