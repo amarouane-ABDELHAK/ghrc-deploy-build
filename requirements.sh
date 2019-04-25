@@ -5,3 +5,7 @@ NVM_DIR="$HOME/.nvm" && \
 
 nvm install 8
 nvm use 8
+
+# We need lerna to build the dependencies
+
+npm install -g lerna

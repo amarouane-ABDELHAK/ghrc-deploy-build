@@ -1,4 +1,4 @@
 #! /bin/bash
 cd $HOME/ghrc-deploy
-npm run install
-npm run test-report
+npm install
+npm run  build
