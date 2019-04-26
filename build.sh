@@ -1,5 +1,5 @@
 #! /bin/bash
-. ~/.bashrc
+. "$HOME/.nvm/nvm.sh"
 cd $HOME/ghrc-deploy
 npm install
-npm run  build
+npm run build

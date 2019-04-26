@@ -20,6 +20,8 @@ RUN . $HOME/requirements.sh
 
 # Adding the build here because we will be modifying it a lot
 # And we want to use the cache layers of docker
-COPY build.sh $HOME/ 
+COPY build.sh $HOME/build.sh 
 
 ENTRYPOINT [ "/bin/bash", "/home/bamboo/build.sh"]
+
+CMD ["0"]
