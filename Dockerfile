@@ -7,7 +7,7 @@ RUN useradd -u 500 -ms /bin/bash bamboo
 RUN apt-get install -y nano 
 #Install dependencies
 RUN apt-get install -y libxml2-utils
-RUN pip install pytest==4.4.1
+RUN pip install pytest-cov
 RUN pip install awscli
 USER bamboo 
 ENV HOME=/home/bamboo
@@ -22,6 +22,6 @@ RUN . $HOME/requirements.sh
 # And we want to use the cache layers of docker
 COPY build.sh $HOME/build.sh 
 
-ENTRYPOINT [ "/bin/bash", "/home/bamboo/build.sh"]
+#ENTRYPOINT [ "/bin/bash", "/home/bamboo/build.sh"]
 
 CMD ["0"]
