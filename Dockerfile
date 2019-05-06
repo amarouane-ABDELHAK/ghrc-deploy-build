@@ -22,6 +22,6 @@ RUN . $HOME/requirements.sh
 # And we want to use the cache layers of docker
 COPY build.sh $HOME/build.sh 
 
-#ENTRYPOINT [ "/bin/bash", "/home/bamboo/build.sh"]
+ENTRYPOINT [ "/bin/bash", "/home/bamboo/build.sh"]
 
 CMD ["0"]
