@@ -9,19 +9,19 @@ RUN apt-get install -y nano
 RUN apt-get install -y libxml2-utils
 RUN pip install pytest-cov
 RUN pip install awscli
+RUN apt-get install -y curl && \
+    apt-get install -y git
+
 USER bamboo 
 ENV HOME=/home/bamboo
 WORKDIR $HOME
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash 
-
-COPY requirements.sh $HOME/ 
-RUN . $HOME/requirements.sh
-
-
+COPY requirements.sh $HOME/
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash && \
+    . $HOME/requirements.sh
+ 
 # Adding the build here because we will be modifying it a lot
 # And we want to use the cache layers of docker
 COPY build.sh $HOME/build.sh 
-
 ENTRYPOINT [ "/bin/bash", "/home/bamboo/build.sh"]
 
 CMD ["0"]
