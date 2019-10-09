@@ -20,8 +20,9 @@ COPY requirements.sh $HOME/
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash && \
     . $HOME/requirements.sh
  
-# Adding the build here because we will be modifying it a lot
 # And we want to use the cache layers of docker
+# Adding the build here because we will be modifying it a lot
+
 COPY build.sh $HOME/build.sh 
 ENTRYPOINT [ "/bin/bash", "/home/bamboo/build.sh"]
 
