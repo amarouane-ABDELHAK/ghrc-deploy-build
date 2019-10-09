@@ -10,7 +10,8 @@ RUN apt-get install -y libxml2-utils
 RUN pip install pytest-cov
 RUN pip install awscli
 RUN apt-get install -y curl && \
-    apt-get install -y git
+    apt-get install -y git && \
+    apt-get install -y rsync
 
 USER bamboo 
 ENV HOME=/home/bamboo
