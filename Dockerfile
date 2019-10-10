@@ -30,6 +30,6 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh
 # Adding the build here because we will be modifying it a lot
 
 COPY build.sh $HOME/build.sh 
-#ENTRYPOINT [ "/bin/bash", "/home/bamboo/build.sh"]
+ENTRYPOINT [ "/bin/bash", "/home/bamboo/build.sh"]
 
 CMD ["0"]
